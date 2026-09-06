@@ -38,7 +38,7 @@ __screenshots__/
 # Vite
 *.timestamp-*-*.mjs
 
-# Node.js + MySQL 비밀번호 깃데가 안올라 가게 하는거
+# Node.js + MySQL(.env) 비밀번호 깃데가 안올라 가게 하는거
 .env
 .env.*
 !.env.example
