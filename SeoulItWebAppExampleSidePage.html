@@ -2,7 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 모바일 화면에 맞게 화면 크기 조절 -->
+    <meta
+        name="viewport" content="width=device-width, initial-scale=1.0"
+    >
     <title>웹앱개발반 연결사이트 템플릿</title>
     <style>
         /* =========================================
@@ -11,8 +14,13 @@
         * {
             box-sizing: border-box;
         }
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
         body {
             margin: 0;
+
             background:
             radial-gradient(
                 circle at top,
@@ -25,35 +33,43 @@
             Arial,
             Helvetica,
             sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-
+        /* =========================================
+           상단 메뉴
+        ========================================= */
         nav {
+            width: 100%;
             background-color: #333333;
             color: white;
             text-align: center;
             padding: 5px 0;
         }
-
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
-
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            display: block;
+            margin: 0;
+            flex-shrink: 0;
         }
-
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 16px;
+            white-space: nowrap;
+            transition: 0.15s;
         }
-
         nav ul li a:hover {
             text-decoration: underline;
         }
-
         /* =========================================
            전체 페이지
         ========================================= */
@@ -69,6 +85,8 @@
             font-size: 30px;
             color: white;
             margin-bottom: 15px;
+            line-height: 1.3;
+            word-break: keep-all;
         }
         /* =========================================
            왼쪽 슬라이드쇼 + 오른쪽 정보
@@ -85,6 +103,7 @@
         ========================================= */
         .gallery {
             min-width: 0;
+            width: 100%;
         }
         /* =========================================
            큰 이미지
@@ -102,7 +121,8 @@
             object-fit: cover;
             display: block;
             opacity: 1;
-            transition: opacity 0.2s ease;
+            transition:
+            opacity 0.2s ease;
         }
         /* 이미지 변경할 때 잠깐 투명 */
         .main-image.fade {
@@ -143,6 +163,8 @@
             align-items: center;
             gap: 6px;
             margin-top: 7px;
+            width: 100%;
+            min-width: 0;
         }
         /* =========================================
            좌우 버튼
@@ -176,7 +198,7 @@
             scroll-behavior: smooth;
             scrollbar-width: none;
         }
-        /* Chrome, Edge, Safari에서 스크롤바 숨기기 */
+        /* Chrome / Edge / Safari */
         .thumbnail-list::-webkit-scrollbar {
             display: none;
         }
@@ -190,7 +212,8 @@
             object-fit: cover;
             cursor: pointer;
             opacity: 0.55;
-            border: 2px solid transparent;
+            border:
+            2px solid transparent;
             transition:
             opacity 0.15s,
             border 0.15s,
@@ -212,6 +235,7 @@
         ========================================= */
         .game-info {
             min-width: 0;
+            width: 100%;
         }
         /* =========================================
            게임 로고
@@ -231,13 +255,16 @@
             font-size: 14px;
             line-height: 1.55;
             margin-bottom: 25px;
+            word-break: keep-all;
         }
         /* =========================================
            게임 정보
         ========================================= */
         .info-row {
             display: grid;
-            grid-template-columns: 135px 1fr;
+            grid-template-columns:
+            135px 1fr;
+            gap: 5px;
             margin-bottom: 12px;
             font-size: 13px;
         }
@@ -246,44 +273,284 @@
         }
         .info-value {
             color: #bbbbbb;
+            min-width: 0;
+            word-break: break-word;
         }
         /* =========================================
-           반응형
+           태블릿 반응형
+           850px 이하
         ========================================= */
         @media (max-width: 850px) {
+            /* 전체 페이지 */
+            .page {
+                width: 100%;
+                max-width: 95%;
+                margin:
+                25px auto 50px;
+            }
+            /* 메뉴 */
+            nav {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding:
+                5px 15px;
+                scrollbar-width: none;
+            }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+            /* 게임 제목 */
+            .game-title {
+                font-size: 27px;
+                margin-bottom: 14px;
+            }
+            /*
+               PC에서는
+               슬라이드쇼 | 게임 정보
+               태블릿에서는
+               슬라이드쇼
+               게임 정보
+            */
             .game-content {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+            }
+            /* 게임 정보(배너 + 설명)를 위로 */
+            .game-info {
+                order: 1;
+                width: 100%;
+            }
+            /* 슬라이드쇼를 아래로 */
+            .gallery {
+                order: 2;
+                width: 100%;
             }
             .game-logo {
-                height: 220px;
+                height: auto;
+                max-height: 220px;
+                object-fit: cover;
+            }
+            /* 설명 */
+            .description {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            /* 정보 */
+            .info-row {
+                grid-template-columns:
+                135px 1fr;
             }
         }
+        /* =========================================
+           모바일 반응형
+           600px 이하
+        ========================================= */
         @media (max-width: 600px) {
+            /* =====================================
+               전체 페이지
+            ===================================== */
             .page {
-                max-width: 100%;
-                margin-top: 20px;
+                width: 100%;
+                max-width: none;
+                margin:
+                20px 0 40px;
+                padding:
+                0 12px;
             }
+            /* =====================================
+               상단 메뉴
+            ===================================== */
+            nav {
+                padding: 8px 0;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                width: max-content;
+                padding:
+                4px 12px;
+                margin: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+            /* =====================================
+               게임 제목
+            ===================================== */
             .game-title {
-                padding-left: 10px;
+                font-size: 22px;
+                line-height: 1.3;
+                margin-bottom: 12px;
+                padding: 0;
+                word-break: keep-all;
+            }
+            /* =====================================
+               메인 이미지
+            ===================================== */
+            .main-image-container {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+            }
+            /* =====================================
+               재생 버튼
+            ===================================== */
+            .play-button {
+                width: 52px;
+                height: 52px;
+                font-size: 20px;
+            }
+            /* =====================================
+               썸네일
+            ===================================== */
+            .thumbnail-wrapper {
+                gap: 4px;
+                margin-top: 6px;
+            }
+            .thumbnail-list {
+                gap: 5px;
             }
             .thumbnail {
-                width: 90px;
-                height: 52px;
+                width: 80px;
+                height: 45px;
             }
+            /* =====================================
+               슬라이드 좌우 버튼
+            ===================================== */
             .slide-button {
-                width: 32px;
+                width: 30px;
+                height: 34px;
+                font-size: 15px;
+            }
+            /* =====================================
+               게임 정보
+            ===================================== */
+            .game-info {
+                width: 100%;
+            }
+            /* =====================================
+               게임 로고
+            ===================================== */
+            .game-logo {
+                width: 100%;
+                height: auto;
+                max-height: none;
+                margin-bottom: 12px;
+                object-fit: cover;
+            }
+            /* =====================================
+               게임 설명
+            ===================================== */
+            .description {
+                font-size: 13px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                word-break: keep-all;
+            }
+            /* =====================================
+               출시일 / 개발자
+            ===================================== */
+            .info-row {
+                grid-template-columns:
+                105px 1fr;
+                gap: 5px;
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+            .info-label {
+                font-size: 11px;
+            }
+            .info-value {
+                font-size: 12px;
+                word-break: break-word;
+            }
+        }
+        /* =========================================
+           아주 작은 휴대폰
+           400px 이하
+        ========================================= */
+        @media (max-width: 400px) {
+            /* 전체 페이지 */
+            .page {
+                padding:
+                0 9px;
+            }
+            /* 제목 */
+            .game-title {
+                font-size: 20px;
+            }
+            /* 재생 버튼 */
+            .play-button {
+                width: 46px;
+                height: 46px;
+                font-size: 18px;
+            }
+            /* 썸네일 */
+            .thumbnail {
+                width: 70px;
+                height: 40px;
+            }
+            /* 좌우 버튼 */
+            .slide-button {
+                width: 27px;
                 height: 32px;
+                font-size: 14px;
+            }
+            /* 정보 */
+            .info-row {
+                grid-template-columns:
+                95px 1fr;
+                font-size: 11px;
+            }
+            .info-label {
+                font-size: 10px;
+            }
+            .info-value {
+                font-size: 11px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- =========================================
+         상단 메뉴
+    ========================================= -->
     <nav>
+
         <ul>
-            <li><a href="index.html">홈</a></li>
-            <li><a href="SeoulItWebAppExampleSidePage.html">예시 연결사이트(템플릿)</a></li>
-            <li><a href="index.html">빈 연결사이트1</a></li>
-            <li><a href="index.html">빈 연결사이트2</a></li>
+
+            <li>
+                <a href="index.html">
+                    홈
+                </a>
+            </li>
+            <li>
+                <a href="SeoulItWebAppExampleSidePage.html">
+                    예시 연결사이트(템플릿)
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    빈 연결사이트1
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    빈 연결사이트2
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -316,7 +583,9 @@
                         class="play-button"
                         onclick="playVideo()"
                     >
+
                         ▶
+
                     </button>
                 </div>
                 <!-- =================================
@@ -407,7 +676,7 @@
                         RELEASE DATE:
                     </div>
                     <div class="info-value">
-                        2026, Sep 08 
+                        2026, Sep 08
                     </div>
                 </div>
                 <!-- 개발자 -->
@@ -422,6 +691,9 @@
             </div>
         </div>
     </div>
+    <!-- =========================================
+         JavaScript
+    ========================================= -->
     <script>
         /* =========================================
            슬라이드 이미지 목록
@@ -454,28 +726,29 @@
         function changeImage(index) {
             currentIndex = index;
             /* ==============================
-            메인 이미지 페이드 아웃
+               메인 이미지 페이드 아웃
             ============================== */
             mainImage.classList.add("fade");
             setTimeout(function() {
-                mainImage.src = images[currentIndex];
+                mainImage.src =
+                    images[currentIndex];
                 mainImage.classList.remove("fade");
             }, 150);
             /* ==============================
-            모든 썸네일의 active 제거
+               모든 썸네일의 active 제거
             ============================== */
             thumbnails.forEach(function(thumbnail) {
                 thumbnail.classList.remove("active");
             });
             /* ==============================
-            현재 썸네일 활성화
+               현재 썸네일 활성화
             ============================== */
             const currentThumbnail =
                 thumbnails[currentIndex];
             currentThumbnail.classList.add("active");
             /* ==============================
-            ★ 현재 썸네일이 안 보이면
-                자동으로 슬라이드바 이동
+               현재 썸네일이 안 보이면
+               자동으로 슬라이드바 이동
             ============================== */
             currentThumbnail.scrollIntoView({
                 behavior: "smooth",
@@ -483,13 +756,15 @@
                 inline: "center"
             });
             /* ==============================
-            첫 번째 이미지만 재생 버튼 표시
+               첫 번째 이미지만 재생 버튼 표시
             ============================== */
             if (currentIndex === 0) {
-                playButton.style.display = "block";
+                playButton.style.display =
+                    "block";
             }
             else {
-                playButton.style.display = "none";
+                playButton.style.display =
+                    "none";
             }
         }
         /* =========================================
@@ -524,6 +799,7 @@
             alert(
                 "여기에 게임 트레일러 영상을 넣을 수 있습니다."
             );
+
         }
         /* =========================================
            키보드 조작
