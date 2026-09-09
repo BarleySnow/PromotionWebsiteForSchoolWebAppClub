@@ -16,38 +16,64 @@
     <style>
         body
         {
-            background-color: #cceeff;
+            background-color: #cccccc;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;  /*document.body.style.margin = "0px"; */
+            margin: 0;
         }
 
         nav {
+            width: 100%;
             background-color: #333333;
             color: white;
             text-align: center;
             padding: 5px 0;
         }
-
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
-
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            display: block;
+            margin: 0;
+            flex-shrink: 0;
         }
-
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 16px;
+            white-space: nowrap;
+            transition: 0.15s;
         }
-
         nav ul li a:hover {
             text-decoration: underline;
+        }
+
+        .BannerBox
+        {
+            width: 100%;
+            background-color: #b3b3b3;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        .BannerImg
+        {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .BoothOperatingText
+        {
+            margin: 8px;
         }
 
         .PresentationBox
@@ -84,14 +110,15 @@
         <nav>
             <ul>
                 <li><a href="index.html">홈</a></li>
-                <li><a href="SeoulItWebAppExampleSidePage.html">예시 연결사이트(템플릿)</a></li>
-                <li><a href="index.html">빈 연결사이트1</a></li>
-                <li><a href="index.html">빈 연결사이트2</a></li>
+                <li><a href="SeoulItWebAppDevelopmentClubExampleSidePage.html">예시 연결사이트(템플릿)</a></li>
+                <li><a href="SeoulItPromotionWebAppDevelopmentClubArtwork.html">웹앱개발반 작품</a></li>
+                <li><a href="SeoulItPromotionGameDevelopmentClubArtwork.html">게임개발반 작품</a></li>
             </ul>
-            <img src="Image/BannerImg.png" class="BannerImg" alt="배너사진">
         </nav>
-
-        <h1>부스 운영시간</h1>
+        <div class="BannerBox">
+            <img src="Image/BannerImg.png" class="BannerImg" alt="배너사진">    
+        </div>        
+        <h1 class="BoothOperatingText">부스 운영시간</h1>
         <br>
         <div class="PresentationBox">
             <div class="BoothLocationBox">
@@ -106,17 +133,17 @@
             <h1>부스내 게임작품 목록 </h1>
             <br><br><br><br><br>
             <h2>1. 예시 연결사이트(템플릿)</h2>
-            <a href="SeoulItWebAppExampleSidePage.html">
+            <a href="SeoulItWebAppDevelopmentClubExampleSidePage.html">
                 <img src="Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
             </a>
             <br><br><br>
-            <h2>2. 빈 연결사이트1</h2>
-            <a href="index.html">
+            <h2>2. 웹앱개발반 작품</h2>
+            <a href="SeoulItPromotionWebAppDevelopmentClubArtwork.html">
                 <img src="Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
             </a>
             <br><br><br>
-            <h2>3. 빈 연결사이트2</h2>
-            <a href="index.html">
+            <h2>3. 게임개발반 작품</h2>
+            <a href="SeoulItPromotionGameDevelopmentClubArtwork.html">
                 <img src="Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
             </a>
         </div>
