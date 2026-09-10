@@ -2,88 +2,79 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웹앱개발반 동아리 홍보용 웹사이트 홈페이지</title>
-    <style type="text/css">
-        .LocationImg
-        {
-            float: left;
-        }
-        .PresentationText
-        {
-            font-size: 16px;
-        }
-    </style>
     <style>
-        body
+
+        * 
         {
-            background-color: #cccccc;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            box-sizing: border-box;
         }
 
-        nav {
-            width: 100%;
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: #cccccc;
+            overflow-x: hidden;
+        }
+
+        nav 
+        {
             background-color: #333333;
             color: white;
             text-align: center;
             padding: 5px 0;
         }
-        nav ul {
+
+        nav ul 
+        {
             list-style-type: none;
             padding: 0;
-            margin: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            margin: 10px 0;
         }
-        nav ul li {
-            display: block;
-            margin: 0;
-            flex-shrink: 0;
+
+        nav ul li 
+        {
+            display: inline;
+            margin-right: 20px;
         }
-        nav ul li a {
+
+        nav ul li a 
+        {
             color: white;
             text-decoration: none;
             font-size: 16px;
-            white-space: nowrap;
-            transition: 0.15s;
         }
-        nav ul li a:hover {
+
+        nav ul li a:hover 
+        {
             text-decoration: underline;
         }
 
-        .BannerBox
-        {
+        .BannerBox {
             width: 100%;
-            background-color: #aaaaaa;
             text-align: center;
-            padding: 0px;
-            margin-top: 0px;
-            margin-bottom: 20px;
+            background-color: #aaaaaa;
         }
 
-        .BannerImg
-        {
-            width: 50%;
-            object-fit: cover;
-            margin-top: 4px;
+        .BannerImg {
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
         }
 
-        .BoothOperatingText
-        {
-            margin: 8px;
-        }
-
-        .PresentationBox
+        .PresentationBox 
         {
             padding: 10px;
             text-align: center;
         }
 
-        .BoothLocationBox
+        .BoothLocationBox 
         {
             display: inline-block;
             background: #b3b3b3;
@@ -91,62 +82,298 @@
             border-radius: 10px;
             width: 700px;
             height: 450px;
+            max-width: 100%;
             text-align: center;
+            overflow: hidden;
         }
-
-        .LocationImg
+        
+        .LocationImg 
         {
+            float: left;
             width: 315px;
             height: 420px;
+            max-width: 100%;
+            object-fit: cover;
         }
 
-        .ManhuntImg
+        .PresentationText 
+        {
+            font-size: 16px;
+            word-break: keep-all;
+        }
+
+        .ManhuntImg 
         {
             width: 250px;
             height: 250px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 850px) 
+        {
+            nav 
+            {
+                padding: 8px 0;
+            }
+
+            nav ul 
+            {
+                display: flex;
+                justify-content: flex-start;
+                gap: 18px;
+                margin: 5px 15px 10px;
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+
+            nav ul::-webkit-scrollbar 
+            {
+                display: none;
+            }
+
+            nav ul li 
+            {
+                display: block;
+                margin-right: 0;
+                flex-shrink: 0;
+            }
+
+            nav ul li a 
+            {
+                font-size: 15px;
+            }
+            
+            .BannerImg {
+                width: 100%;
+                height: auto;
+                max-width: none;
+            }
+
+            .BoothLocationBox 
+            {
+                width: 100%;
+                height: auto;
+                min-height: 450px;
+            }
+
+            .LocationImg 
+            {
+                width: 45%;
+                height: auto;
+                max-height: 420px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 15px;
+            }
+
+            .ManhuntImg 
+            {
+                width: 220px;
+                height: 220px;
+            }
+        }
+        @media (max-width: 600px) 
+        {
+            body 
+            {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            nav 
+            {
+                width: 100%;
+                padding: 6px 0 0;
+            }
+
+            nav ul 
+            {
+                display: flex;
+                gap: 18px;
+                margin: 4px 12px 8px;
+                padding: 0;
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+
+            nav ul::-webkit-scrollbar 
+            {
+                display: none;
+            }
+
+            nav ul li 
+            {
+                flex-shrink: 0;
+                margin: 0;
+            }
+
+            nav ul li a 
+            {
+                font-size: 14px;
+            }
+
+            .BannerBox {
+                width: 100%;
+                background-color: #aaaaaa;
+            }
+
+            .BannerImg {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
+
+            h1 
+            {
+                font-size: 25px;
+                margin: 20px 10px 10px;
+            }
+
+            h2 
+            {
+                font-size: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            .PresentationBox 
+            {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .BoothLocationBox 
+            {
+                display: block;
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                padding: 12px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .LocationImg 
+            {
+                float: none;
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: none;
+                margin: 0 auto 15px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 10px 0;
+                word-break: keep-all;
+            }
+
+            .ManhuntImg 
+            {
+                display: block;
+                width: min(250px, 80vw);
+                height: auto;
+                margin: 0 auto;
+            }
+
+        }
+
+        @media (max-width: 400px) 
+        {
+            nav ul 
+            {
+                gap: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            nav ul li a 
+            {
+                font-size: 13px;
+            }
+
+            h1 
+            {
+                font-size: 22px;
+            }
+
+            h2 
+            {
+                font-size: 18px;
+            }
+
+            .PresentationBox 
+            {
+                padding: 8px;
+            }
+
+            .BoothLocationBox 
+            {
+                padding: 10px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .ManhuntImg 
+            {
+                width: 75vw;
+            }
         }
     </style>
 </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="index.html">홈</a></li>
-                <li><a href="Html/SeoulItWebAppDevelopmentClubExampleSidePage.html">예시 연결사이트(템플릿)</a></li>
-                <li><a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">웹앱개발반 작품</a></li>
-                <li><a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">게임개발반 작품</a></li>
-            </ul>
-        </nav>
-        <div class="BannerBox">
-            <img src="Html/Image/BannerImg.png" class="BannerImg" alt="배너사진">    
-        </div>        
-        <h1 class="BoothOperatingText">부스 운영시간</h1>
-        <br>
-        <div class="PresentationBox">
-            <div class="BoothLocationBox">
-                <img src="Html/Image/BoothLocationImg.png" class="LocationImg" alt="부스 위치사진">
-                <p class="PresentationText">
-                    안녕하세요 이것은 예시 작성문 입니다.<br>
-                    그래서 중요한 내용은 적혀있지 않으니 넘어가주십시오.<br>
-                    그럼에도 궁금하신 점이 있다면 그냥 가세요.
-                </p>
-            </div>
-            <br>
-            <h1>부스내 게임작품 목록 </h1>
-            <br><br><br><br><br>
-            <h2>1. 예시 연결사이트(템플릿)</h2>
-            <a href="Html/SeoulItWebAppDevelopmentClubExampleSidePage.html">
-                <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="연결 사이트 예시 사진">
-            </a>
-            <br><br><br>
-            <h2>2. 웹앱개발반 작품</h2>
-            <a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">
-                <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="웹앱개발반 작품사이트 예시 사진">
-            </a>
-            <br><br><br>
-            <h2>3. 게임개발반 작품</h2>
-            <a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">
-                <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="게임개발반 작품사이트 예시 사진">
-            </a>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="Html/SeoulItWebAppDevelopmentClubExampleSidePage.html">예시 연결사이트(템플릿)</a></li>
+            <li><a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">웹앱개발반 작품</a></li>
+            <li><a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">게임개발반 작품</a></li>
+        </ul>
+    </nav>
+    <div class="BannerBox">
+        <img src="Html/Image/BannerImg.png" class="BannerImg" alt="배너사진">
+    </div>
+    <h1>부스 운영시간</h1>
+    <br>
+    <div class="PresentationBox">
+        <div class="BoothLocationBox">
+            <img src="Html/Image/BoothLocationImg.png" class="LocationImg" alt="부스 위치사진">
+            <p class="PresentationText">
+                안녕하세요 이것은 예시 작성문 입니다.<br>
+                그래서 중요한 내용은 적혀있지 않으니 넘어가주십시오.<br>
+                그럼에도 궁금하신 점이 있다면 그냥 가세요.
+            </p>
         </div>
+        <br>
+        <h1>부스내 게임작품 목록</h1>
+        <br><br><br><br><br>
+        <h2>1. 예시 연결사이트(템플릿)</h2>
+        <a href="Html/SeoulItWebAppExampleSidePage.html">
+            <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
+        </a>
+        <br><br><br>
+        <h2>2. 빈 연결사이트1</h2>
+        <a href="Html/index.html">
+            <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
+        </a>
+        <br><br><br>
+        <h2>3. 빈 연결사이트2</h2>
+        <a href="Html/index.html">
+            <img src="Html/Image/TestImg.jpg" class="ManhuntImg" alt="맨헌트 연결 사진">
+        </a>
+    </div>
 </body>
 </html>
