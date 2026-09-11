@@ -44,7 +44,13 @@
             nav ul li a:hover {
                 text-decoration: underline;
             }
-
+            .PromotionImg
+            {
+                width: 250px;
+                height: 250px;
+                max-width: 100%;
+                object-fit: cover;
+            }
         @media (max-width: 850px) 
         {
             nav {
@@ -61,8 +67,13 @@
             nav ul::-webkit-scrollbar {
                 display: none;
             }
-        }
 
+            .PromotionImg 
+            {
+                width: 220px;
+                height: 220px;
+            }
+        }
         @media (max-width: 600px) 
         {
             body 
@@ -94,6 +105,14 @@
             nav ul li a {
                 font-size: 14px;
             }
+
+            .PromotionImg 
+            {
+                display: block;
+                width: min(250px, 80vw);
+                height: auto;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 400px) 
@@ -108,6 +127,11 @@
             nav ul li a 
             {
                 font-size: 13px;
+            }
+
+            .PromotionImg 
+            {
+                width: 75vw;
             }
         }
         </style>
