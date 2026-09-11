@@ -2,6 +2,7 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>웹앱개발반 작품 연결사이트</title>
         <style>
             body
@@ -43,6 +44,72 @@
             nav ul li a:hover {
                 text-decoration: underline;
             }
+
+        @media (max-width: 850px) 
+        {
+            nav {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding:
+                5px 15px;
+                scrollbar-width: none;
+            }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) 
+        {
+            body 
+            {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 8px 0;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                width: max-content;
+                padding:
+                4px 12px;
+                margin: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) 
+        {
+            nav ul 
+            {
+                gap: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            nav ul li a 
+            {
+                font-size: 13px;
+            }
+        }
         </style>
     </head>
 
