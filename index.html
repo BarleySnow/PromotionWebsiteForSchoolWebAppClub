@@ -17,13 +17,13 @@
             padding: 0;
             justify-content: center;
             align-items: center;
-            background-color: #cccccc;
+            background-color: #0E0F37;
             overflow-x: hidden;
         }
 
         nav {
             width: 100%;
-            background-color: #333333;
+            background-color: #0E0F37;
             color: white;
             text-align: center;
             padding: 5px 0;
@@ -60,7 +60,7 @@
         .BannerBox {
             width: 100%;
             text-align: center;
-            background-color: #ffffff;
+            background-color: #15164C;
         }
 
         .BannerImg {
@@ -80,7 +80,7 @@
         .BoothLocationBox 
         {
             display: inline-block;
-            background: #b3b3b3;
+            background: #160e3e;
             padding: 20px;
             border-radius: 10px;
             width: 700px;
@@ -99,18 +99,40 @@
             object-fit: cover;
         }
 
+        .text
+        {
+            color: #ffffff;
+        }
+
         .PresentationText 
         {
             font-size: 16px;
             word-break: keep-all;
+            color: #ffffff;
         }
 
-        .SidePageImg 
-        {
-            width: 250px;
-            height: 250px;
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+        }
+
+        .box {
+            width: 600px;
+            height: 400px;
             max-width: 100%;
-            object-fit: cover;
+            box-sizing: border-box;
+            background-color: #160e3e;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .ArtworkImg
+        {
+            width: 600px;
+            height: 400px;
         }
 
         @media (max-width: 850px) 
@@ -195,7 +217,6 @@
 
             .BannerBox {
                 width: 100%;
-                background-color: #aaaaaa;
             }
 
             .BannerImg {
@@ -321,7 +342,7 @@
     <div class="BannerBox">
         <img src="Html/Source/Image/BannerImg.png" class="BannerImg" alt="배너사진">
     </div>
-    <h1>부스 운영시간</h1>
+    <h1 class="text">부스 운영시간</h1>
     <br>
     <div class="PresentationBox">
         <div class="BoothLocationBox">
@@ -333,22 +354,19 @@
             </p>
         </div>
         <br>
-        <h1>부스내 게임작품 목록</h1>
+        <h1 class="text">부스내 동아리 목록</h1>
         <br><br><br><br><br>
-        <h2>1. 예시 연결사이트(템플릿)</h2>
-        <a href="Html/SeoulItWebAppDevelopmentClubExampleSidePage.html">
-            <img src="Html/Source/Image/TestImg.jpg" class="SidePageImg" alt="홍보페이지 이미지">
-        </a>
-        <br><br><br>
-        <h2>2. 웹앱개발반 작품</h2>
-        <a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">
-            <img src="Html/Source/Image/TestImg.jpg" class="SidePageImg" alt="홍보페이지 이미지">
-        </a>
-        <br><br><br>
-        <h2>3. 게임개발반 작품</h2>
-        <a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">
-            <img src="Html/Source/Image/TestImg.jpg" class="SidePageImg" alt="홍보페이지 이미지">
-        </a>
+        <div class="container">
+            <a href="Html/SeoulItpromotionWebAppDevelopmentClubArtWork.html">
+            <div class="box">
+                <img src="Html/Source/Image/WebAppBanner.png" class="ArtworkImg" alt="웹앱개발반 작품페이지 연결 이미지">
+            </div>
+            </a>
+            <a href="Html/SeoulItpromotionGameDevelopmentClubArtWork.html">
+            <div class="box">
+                <img src="Html/Source/Image/GameBanner.png" class="ArtworkImg" alt="게임개발반 작품페이지 연결 이미지">
+            </div>
+            </a>
     </div>
 </body>
 </html>
