@@ -12,6 +12,12 @@
         * {
             box-sizing: border-box;
         }
+
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -27,7 +33,15 @@
                 Arial,
                 sans-serif;
             line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-wrap: break-word;
         }
+
+        img {
+            max-width: 100%;
+        }
+
         nav {
             width: 100%;
             background-color: #0E0F37;
@@ -382,94 +396,414 @@
         /* =========================
            반응형
         ========================= */
-        @media (max-width: 600px) {
+
+        /* 태블릿 */
+        @media (max-width: 850px) {
+
             nav {
-                padding: 8px 0;
                 overflow-x: auto;
                 white-space: nowrap;
             }
+
             nav ul {
-                display: flex;
                 justify-content: flex-start;
-                align-items: center;
-                gap: 18px;
                 width: max-content;
-                padding:
-                4px 12px;
+                padding: 5px 15px;
                 margin: 0;
+                gap: 18px;
             }
-            nav ul li {
-                display: block;
-                margin: 0;
-                flex-shrink: 0;
+
+            nav ul::-webkit-scrollbar {
+                display: none;
             }
-            nav ul li a {
-                font-size: 14px;
+
+            nav ul {
+                scrollbar-width: none;
             }
+
             .manual {
                 width: 95%;
-                margin: 15px auto;
-                padding: 25px;
-                border-width: 5px;
+                max-width: 1100px;
+                margin: 25px auto 50px;
+                padding: 35px;
+                border-width: 6px;
             }
+
             .manual::before {
-                top: 10px;
-                left: 10px;
-                right: 10px;
-                bottom: 10px;
+                top: 13px;
+                left: 13px;
+                right: 13px;
+                bottom: 13px;
             }
+
             .cover {
-                min-height: 420px;
-                padding: 30px 10px;
+                min-height: 450px;
+                padding: 40px 20px;
             }
+
             .game-title {
-                font-size: 45px;
-                letter-spacing: 2px;
+                font-size: clamp(38px, 9vw, 65px);
+                word-break: keep-all;
             }
+
             .game-subtitle {
-                font-size: 16px;
+                font-size: 18px;
+                word-break: keep-all;
             }
-            .dice {
-                font-size: 60px;
-            }
+
             .section {
-                margin: 50px 0;
+                margin: 55px 0;
             }
-            .section-header {
-                align-items: flex-start;
-            }
-            .section-number {
-                min-width: 50px;
-                height: 50px;
-                font-size: 19px;
-            }
+
             .section-title {
-                font-size: 28px;
+                font-size: clamp(27px, 5vw, 38px);
+                word-break: keep-all;
             }
-            .components {
-                grid-template-columns: 1fr 1fr;
+
+            .section-header {
+                gap: 14px;
             }
-            .component {
-                padding: 18px 10px;
+
+            .section-number {
+                min-width: 58px;
+                height: 58px;
+                font-size: 22px;
             }
-            .steps {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 430px) {
-           .manual {
-                padding: 20px;
-            }
-            .components {
-                grid-template-columns: 1fr;
-            }
-            .toc-list li {
-                font-size: 14px;
-            }
+
             .intro-box,
             .rule-box,
             .warning {
-                padding: 20px;
+                padding: 25px;
+            }
+
+            .game-image {
+                max-height: 400px;
+            }
+
+            .components {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* 모바일 */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 8px 0;
+            }
+
+            nav ul {
+                gap: 18px;
+                padding: 4px 12px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .manual {
+                width: calc(100% - 24px);
+                max-width: none;
+                margin: 20px auto 40px;
+                padding: 25px 18px;
+                border-width: 5px;
+            }
+
+            .manual::before {
+                top: 9px;
+                left: 9px;
+                right: 9px;
+                bottom: 9px;
+            }
+
+            .cover {
+                min-height: 390px;
+                padding: 30px 8px;
+            }
+
+            .cover-small {
+                font-size: 12px;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            .game-title {
+                font-size: clamp(36px, 12vw, 52px);
+                line-height: 1.15;
+                letter-spacing: 2px;
+                word-break: keep-all;
+            }
+
+            .game-subtitle {
+                font-size: 15px;
+                line-height: 1.5;
+                letter-spacing: 1px;
+            }
+
+            .dice {
+                font-size: 55px;
+                margin: 25px 0 15px;
+            }
+
+            .cover-rule {
+                width: 130px;
+                margin: 18px auto;
+            }
+
+            .toc {
+                margin: 35px 0;
+                padding: 20px 15px;
+            }
+
+            .toc-title {
+                font-size: 23px;
+                letter-spacing: 2px;
+            }
+
+            .toc-list li {
+                font-size: 14px;
+                gap: 10px;
+            }
+
+            .section {
+                margin: 45px 0;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .section-number {
+                min-width: 45px;
+                width: 45px;
+                height: 45px;
+                font-size: 17px;
+                border-radius: 6px;
+                box-shadow: 2px 2px 0 #a58b68;
+            }
+
+            .section-title {
+                font-size: clamp(24px, 7vw, 31px);
+                line-height: 1.25;
+                letter-spacing: 1px;
+            }
+
+            .section-description {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .intro-box {
+                padding: 18px 16px;
+                border-left-width: 5px;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .intro-box p {
+                margin-top: 0;
+                margin-bottom: 14px;
+            }
+
+            .intro-box p:last-child {
+                margin-bottom: 0;
+            }
+
+            .game-image {
+                margin: 20px 0;
+                border-width: 4px;
+                box-shadow: 3px 3px 0 #a58b68;
+                max-height: none;
+            }
+
+            .components {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .component {
+                padding: 15px 8px;
+            }
+
+            .component-icon {
+                font-size: 35px;
+            }
+
+            .component-name {
+                font-size: 15px;
+            }
+
+            .setup-list li {
+                margin: 12px 0;
+                padding: 14px 14px 14px 53px;
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            .setup-list li::before {
+                left: 12px;
+                width: 31px;
+                height: 31px;
+                font-size: 13px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .step {
+                padding: 18px 15px;
+            }
+
+            .step h3 {
+                font-size: 19px;
+            }
+
+            .rule-box {
+                margin: 20px 0;
+                padding: 20px 16px;
+                font-size: 14px;
+            }
+
+            .rule-box::before {
+                left: 14px;
+                font-size: 11px;
+                padding: 3px 9px;
+            }
+
+            .warning {
+                margin: 20px 0;
+                padding: 18px 15px;
+                border-left-width: 6px;
+                font-size: 14px;
+                line-height: 1.65;
+            }
+
+            .warning-title {
+                font-size: 18px;
+            }
+
+            .victory {
+                padding: 30px 18px;
+            }
+
+            .trophy {
+                font-size: 50px;
+            }
+
+            .victory h3 {
+                font-size: 25px;
+            }
+
+            .ending {
+                margin-top: 50px;
+                padding-top: 30px;
+            }
+
+            .ending-title {
+                font-size: 26px;
+            }
+        }
+
+        /* 아주 작은 휴대폰 */
+        @media (max-width: 400px) {
+
+            .manual {
+                width: calc(100% - 16px);
+                padding: 20px 14px;
+            }
+
+            .manual::before {
+                top: 7px;
+                left: 7px;
+                right: 7px;
+                bottom: 7px;
+            }
+
+            .cover {
+                min-height: 350px;
+                padding: 25px 5px;
+            }
+
+            .cover-small {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .game-title {
+                font-size: clamp(32px, 13vw, 45px);
+            }
+
+            .game-subtitle {
+                font-size: 13px;
+            }
+
+            .dice {
+                font-size: 48px;
+            }
+
+            .toc {
+                padding: 18px 12px;
+            }
+
+            .toc-list li {
+                font-size: 12px;
+                padding: 8px 3px;
+            }
+
+            .section {
+                margin: 38px 0;
+            }
+
+            .section-number {
+                min-width: 40px;
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+            .intro-box,
+            .rule-box,
+            .warning {
+                padding: 16px 13px;
+            }
+
+            .intro-box {
+                font-size: 13px;
+            }
+
+            .setup-list li {
+                padding-left: 48px;
+                font-size: 13px;
+            }
+
+            .setup-list li::before {
+                left: 10px;
+                width: 28px;
+                height: 28px;
+            }
+
+            .components {
+                grid-template-columns: 1fr;
+            }
+
+            .component {
+                padding: 14px 10px;
+            }
+
+            .ending-title {
+                font-size: 23px;
             }
         }
     </style>
