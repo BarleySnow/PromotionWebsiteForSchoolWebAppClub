@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Source/Image/Favicon-512x512.png">
+        <title>웹앱개발반 작품 연결사이트</title>
+        <style>
+            body
+            {
+                background-color: #15164C;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .titletext
+            {
+                color: #FFFFFF;
+            }
+            nav {
+                width: 100%;
+                background: #0E0F37;
+                color: white;
+                text-align: center;
+                padding: 5px 0;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                white-space: nowrap;
+                transition: 0.15s;
+            }
+            nav ul li a:hover {
+                text-decoration: underline;
+            }
+            .PromotionImg
+            {
+                width: 250px;
+                height: 250px;
+                max-width: 100%;
+                object-fit: cover;
+            }
+            .game-container
+            {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 30px;
+            }
+            .cardtext
+            {
+                color: #ffffff;
+            }
+            .game-card
+            {
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                max-height: 500px;
+                background-color: #160e5e;
+                border-radius: 12px;
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .game-card h2
+            {
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+
+            .game-card .PromotionImg
+            {
+                display: block;
+                width: min(250px, 100%);
+                height: 250px;
+                margin: 0 auto;
+                object-fit: cover;
+            }
+
+        @media (max-width: 850px) 
+        {
+            nav {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding:
+                5px 15px;
+                scrollbar-width: none;
+            }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+
+            .PromotionImg 
+            {
+                width: 220px;
+                height: 220px;
+            }
+        }
+        @media (max-width: 600px) 
+        {
+            body 
+            {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 8px 0;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                width: max-content;
+                padding:
+                4px 12px;
+                margin: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .game-container
+            {
+                grid-template-columns: 1fr;
+                width: 90%;
+                gap: 20px;
+            }
+
+            .game-card
+            {
+                padding: 15px;
+            }
+
+            .PromotionImg 
+            {
+                display: block;
+                width: min(250px, 80vw);
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 400px) 
+        {
+            nav ul 
+            {
+                gap: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            nav ul li a 
+            {
+                font-size: 13px;
+            }
+
+            .PromotionImg 
+            {
+                width: 75vw;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="SeoulItPromotionWebAppDevelopmentClubArtwork.html">웹앱개발반 작품</a></li>
+                <li><a href="SeoulItPromotionGameDevelopmentClubArtwork.html">게임개발반 작품</a></li>
+            </ul>
+        </nav>
+        <h1 class="titletext">웹앱개발반 작품 페이지</h1>
+        <br><br><br><br><br>
+
+        <div class="game-container">
+
+            <div class="game-card">
+                <h2 class="cardtext">Man hunt</h2>
+                <a href="SeoulItWebApp/PromotionPage-ManHunt.html">
+                    <img src="Source/Image/Img-ManHunt.png" class="PromotionImg" alt="Man Hunt 홍보페이지 이미지">
+                </a>
+            </div>
+
+            <div class="game-card">
+                <h2 class="cardtext">두더지잡기</h2>
+                <a href="SeoulItWebApp/PromotionPage-WhacAMole.html">
+                    <img src="Source/Image/Img-WhacAMole.png" class="PromotionImg" alt="두더지잡기 홍보페이지 이미지">
+                </a>
+            </div>
+
+            <div class="game-card">
+                <h2 class="cardtext">테트리스</h2>
+                <a href="SeoulItWebApp/PromotionPage-Tetris.html">
+                    <img src="Source/Image/Img-Tetris.png" class="PromotionImg" alt="테트리스 홍보페이지 이미지">
+                </a>
+            </div>
+
+            <div class="game-card">
+                <h2 class="cardtext">스네이크 게임</h2>
+                <a href="SeoulItWebApp/PromotionPage-SnakeGame.html">
+                    <img src="Source/Image/Img-SnakeGame.png" class="PromotionImg" alt="스네이크 게임 홍보페이지 이미지">
+                </a>
+            </div>
+
+            <div class="game-card">
+                <h2 class="cardtext">미로탈출</h2>
+                <a href="SeoulItWebApp/PromotionPage-MazeEscape.html">
+                    <img src="Source/Image/Img-MazeEscape.png" class="PromotionImg" alt="미로탈출 홍보페이지 이미지">
+                </a>
+            </div>
+
+        </div>
+
+    </body>
+</html>

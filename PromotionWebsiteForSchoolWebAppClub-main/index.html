@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Html/Source/Image/Favicon-512x512.png">
+    <title>웹앱개발반 동아리 홍보용 웹사이트 홈페이지</title>
+    <style>
+
+        * 
+        {
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: #0E0F37;
+            overflow-x: hidden;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #0E0F37;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: block;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            white-space: nowrap;
+            transition: 0.15s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .BannerBox {
+            width: 100%;
+            text-align: center;
+            background-color: #15164C;
+        }
+
+        .BannerImg {
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .PresentationBox 
+        {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .BoothLocationBox 
+        {
+            display: inline-block;
+            background: #160e3e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 700px;
+            height: 450px;
+            max-width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .LocationImg 
+        {
+            float: left;
+            width: 315px;
+            height: 420px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        .text
+        {
+            color: #ffffff;
+        }
+
+        .PresentationText 
+        {
+            font-size: 16px;
+            word-break: keep-all;
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+        }
+
+        .box {
+            width: 600px;
+            height: 400px;
+            max-width: 100%;
+            box-sizing: border-box;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .ArtworkImg
+        {
+            width: 600px;
+            height: 400px;
+        }
+
+        @media (max-width: 850px) 
+        {
+            nav {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding:
+                5px 15px;
+                scrollbar-width: none;
+            }
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .BannerImg {
+                width: 100%;
+                height: auto;
+                max-width: none;
+            }
+
+            .BoothLocationBox 
+            {
+                width: 100%;
+                height: auto;
+                min-height: 450px;
+            }
+
+            .LocationImg 
+            {
+                width: 45%;
+                height: auto;
+                max-height: 420px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 15px;
+            }
+
+            .ArtworkImg
+        {
+            width: 100%;
+                max-width: none;
+                height: auto;
+        }
+        }
+        @media (max-width: 600px) 
+        {
+            body 
+            {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 8px 0;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                width: max-content;
+                padding:
+                4px 12px;
+                margin: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                flex-shrink: 0;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .BannerBox {
+                width: 100%;
+            }
+
+            .BannerImg {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
+
+            h1 
+            {
+                font-size: 25px;
+                margin: 20px 10px 10px;
+            }
+
+            h2 
+            {
+                font-size: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            .PresentationBox 
+            {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .BoothLocationBox 
+            {
+                display: block;
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                padding: 12px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .LocationImg 
+            {
+                float: none;
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: none;
+                margin: 0 auto 15px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 10px 0;
+                word-break: keep-all;
+            }
+
+            .SidePageImg  
+            {
+                display: block;
+                width: min(250px, 80vw);
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .box 
+            {
+                width: 100%;
+            }
+
+            .ArtworkImg
+            {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 400px) 
+        {
+            nav ul 
+            {
+                gap: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            nav ul li a 
+            {
+                font-size: 13px;
+            }
+
+            h1 
+            {
+                font-size: 22px;
+            }
+
+            h2 
+            {
+                font-size: 18px;
+            }
+
+            .PresentationBox 
+            {
+                padding: 8px;
+            }
+
+            .BoothLocationBox 
+            {
+                padding: 10px;
+            }
+
+            .PresentationText 
+            {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .SidePageImg 
+            {
+                width: 75vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">웹앱개발반 작품</a></li>
+            <li><a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">게임개발반 작품</a></li>
+        </ul>
+    </nav>
+    <div class="BannerBox">
+        <img src="Html/Source/Image/BannerImg.png" class="BannerImg" alt="배너사진">
+    </div>
+    <h1 class="text">부스 운영시간</h1>
+    <br>
+    <div class="PresentationBox">
+        <div class="BoothLocationBox">
+            <img src="Html/Source/Image/BoothLocationImg.png" class="LocationImg" alt="부스 위치사진">
+            <p class="PresentationText">
+                저희 부스위치는 실습실 3층 게임컨텐츠 제작실입니다.<br>
+                올해 웹앱개발반과 게임개발반이 한 부스에서 운영을 하게되어, 한부스에서 2개의 동아리를 경험하실 수 있습니다!<br>
+                게임개발반에서 이벤트를 하고있습니다. 랭킹 3위안에 들어오면 소정의 상품을 드립니다.<br>
+                웹앱개발반에서는 게임에서 우승시, 간식을 증정합니다.<br>
+                어느정도 장담합니다. 놀러오셔도 손해봤다는 생각은 안 드실 겁니다!
+            </p>
+        </div>
+        <br>
+        <h1 class="text">부스내 동아리 목록</h1>
+        <br><br><br><br><br>
+        <div class="container">
+            <a href="Html/SeoulItPromotionWebAppDevelopmentClubArtwork.html">
+            <div class="box">
+                <img src="Html/Source/Image/WebAppBanner.png" class="ArtworkImg" alt="웹앱개발반 작품페이지 연결 이미지">
+            </div>
+            </a>
+            <a href="Html/SeoulItPromotionGameDevelopmentClubArtwork.html">
+            <div class="box">
+                <img src="Html/Source/Image/GameBanner.png" class="ArtworkImg" alt="게임개발반 작품페이지 연결 이미지">
+            </div>
+            </a>
+    </div>
+</body>
+</html>
